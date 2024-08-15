@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin it!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="spinner.png">
+</head>
+<body>
+    <nav>
+        <h1><b><i>Mahenoor</i></b></h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="spinner">
+            <img class="img1" src="spinner.png" alt="">
+
+            <img  class="img1" src="spinner.png" alt="">
+
+
+            <img   class="img1" src="spinner.png" alt="">
+
+
+        </div>
+        <button>start</button>
+    </div>
+
+    <script>
+let button = document.querySelector('button');
+let spinner = document.querySelector('.spinner');
+
+button.onclick = function() {
+    
+    spinner.classList.toggle('stop');
+
+    
+    if (spinner.classList.contains('stop')) {
+        button.innerHTML = "start";
+    } else {
+        button.innerHTML = "stop";
+    }
+}
+
+
+    </script>
+</body>
+</html>
