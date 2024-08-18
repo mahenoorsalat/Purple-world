@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spin it!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="spinner.png">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="spinner.png" />
+  </head>
+  <body>
     <nav>
-        <h1><b><i>Mahenoor</i></b></h1>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-        </ul>
+      <h1>
+        <b><i>Mahenoor</i></b>
+      </h1>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+      </ul>
     </nav>
     <div class="container">
-        <div class="spinner">
-            <img class="img1" src="spinner.png" alt="">
-
-            <img  class="img1" src="spinner.png" alt="">
-
-
-            <img   class="img1" src="spinner.png" alt="">
-
+      <div class="spinner">
+        <div class="box box1">
+            <div class="box box2">
+                <div class="box box3"></div>
+            </div>
 
         </div>
-        <button>start</button>
+
+      </div>
     </div>
 
-    <script>
-let button = document.querySelector('button');
-let spinner = document.querySelector('.spinner');
+<div class="cen">
+  <div class="gray-heart"></div>
+  <div class="red-heart"></div>
+</div>
 
-button.onclick = function() {
-    
-    spinner.classList.toggle('stop');
-
-    
-    if (spinner.classList.contains('stop')) {
-        button.innerHTML = "start";
-    } else {
-        button.innerHTML = "stop";
-    }
-}
-
-
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

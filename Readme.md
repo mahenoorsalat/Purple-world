@@ -1,4 +1,4 @@
-# Spin it! 🎡
+# Purple-world! 🎡
 
 Welcome to **Spin it!** – a fun and interactive web page featuring animated spinners that you can start and stop with just a click of a button.
 
@@ -39,4 +39,4 @@ This project is built with responsiveness in mind, ensuring it looks great on al
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mahenoorsalat/Spin-it-.git
+   git clone https://github.com/mahenoorsalat/Purple-world.git

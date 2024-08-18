@@ -1,8 +1,12 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
 }
-
+:root{
+    --main-color : purple;
+}
+/* Body Styling */
 body {
     height: 100vh;
     width: 100vw;
@@ -12,59 +16,51 @@ body {
     background-position: center;
 }
 
-.spinner img {
-    animation: arround 0.5s linear infinite; /* Reduced duration for faster rotation */
+/* Box Styling */
+.box {
+    width: 400px;
+    height: 300px;
+    background: #fff;
+    position: relative; /* Ensure child elements are positioned relative to this */
 }
 
-@keyframes arround {
-    100% {
-        transform: rotate(360deg);
-    }
+.box1, .box2, .box3 {
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
-.stop img {
-    animation: none;
+.box:hover .box1 {
+    transform: rotate(5deg); 
+    box-shadow: 0px 0px 5px 5px purple; /* Rotate box2 to 45 degrees */
+    /* Rotate box1 to 15 degrees */
 }
 
-button {
-    margin: 0px 661px;
-    position: absolute;
-    padding: 1rem 4rem;
-    background: linear-gradient(pink , purple , aqua);
-    text-transform: uppercase;
-    color: white;
-    border-radius: 100px;
-    font-size: 1.5rem;
-    transition: all 0.2s;
-    cursor: pointer;
+.box:hover .box2 {
+    transform: rotate(15deg);
+    box-shadow: 0px 0px 5px 5px purple; /* Rotate box2 to 45 degrees */
 }
 
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition: all 1s;
-    z-index: -1;
+.box:hover .box3 {
+    transform: rotate(30deg);
+    box-shadow: 0px 0px 5px 5px purple; /* Rotate box2 to 45 degrees */
+    /* Rotate box3 to 30 degrees */
 }
 
-button:hover::before {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
+/* Styling for box3 with image */
+.box3 {
+    background-image: url(girl.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-button:hover {
-    transform: translateX(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+/* Spinner Styling */
+.spinner {
+    margin: 80px 144px;
+    display: flex;
+    justify-content: center;
 }
 
-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
+/* Navigation Styling */
 nav {
     padding: 14px;
     justify-content: space-between;
@@ -89,79 +85,152 @@ ul li {
 li::before {
     content: "";
     position: absolute;
-    top: 0; /* Position at the top */
+    top: 0;
     left: 0;
     width: 100%;
     height: 2px;
     background: #fff;
     transform: scaleX(0);
     transition: all 1s;
-    transform-origin: left; /* Expand from the left */
+    transform-origin: left;
 }
 
 li::after {
     content: "";
     position: absolute;
-    bottom: 0; /* Position at the bottom */
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
     background: #fff;
     transform: scaleX(0);
     transition: all 1s;
-    transform-origin: right; /* Expand from the right */
+    transform-origin: right;
 }
 
 li:hover::before {
-    transform: scaleX(1); /* Expand to full width */
+    transform: scaleX(1);
 }
 
 li:hover::after {
-    transform: scaleX(1); /* Expand to full width */
+    transform: scaleX(1);
 }
 
-.spinner {
-    margin: 80px 144px;
-    display: flex; /* Changed from justify-content to flex for centering */
-    justify-content: center;
-}
-
-.spinner img {
-    height: 400px;
-}
-
-
-@media (max-width:420px){
+/* Responsive Styling */
+@media (max-width: 420px) {
     body {
-        height: 100vh;
+        height: 238vh;
         width: 100vw;
         background: url(bg.jpeg);
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-size: cover;
         background-position: center;
     }
 
-    nav{
-        width:100%;
+    .box {
+        width: 200px;
+        height: 200px;
+    }
+    .red-heart {
+
+        top: 416px;
+
+    }
+
+    nav {
+        width: 100%;
         padding: 14px 3px;
         font-size: 9px;
-       
     }
-   
-    .spinner img{
-          height: 110px;
-    }
-    button{
-        margin: 10px;
-        padding: 10px 17px;
-        font-size: 10px;
-    }
-    nav ul li{
+
+    nav ul li {
         font-size: 14px;
         padding: 6px 9px;
         margin: 0px 5px;
     }
+}
 
+.gray-heart{
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top:0;
+    transform: rotate(-45deg);
+    
+}
 
+.gray-heart:before,
+.gray-heart:after{
+content: "";
+background: #ccc;
+border-radius: 50%;
+height: 100%;
+width: 100%;
+position: absolute;
+}
+.gray-heart::before{
+    top: -50px;
+    left: 0;
+}
+.gray-heart::after{
+    left: 50px;
+    top: 0;
+}
 
+.red-heart{
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    transform: rotate(0deg);
+    margin: auto;
+    transform: rotate(-45deg);
+    top: 530px;
+    visibility: hidden;
+}
+
+.red-heart:before,
+.red-heart::after{
+    content: "";
+    background: var(--main-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+.red-heart:before{
+    top: -50px;
+    left: 0px;
+}
+.red-heart:after{
+    left: 50px;
+    top: 0px;
+}
+
+.cen {
+    width: 7%;
+    margin: auto;
+}
+
+@keyframes pop{
+    100%{
+        transform: scale(1.7) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+.red-heart.animation{
+    animation: pop 0.9s linear;
+    visibility: visible;
+    box-shadow: 0p 0px 9px 2px purple;
+}
+.red-heart.fill-color{
+    background: var(--main-color);
 }
