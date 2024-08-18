@@ -116,39 +116,7 @@ li:hover::after {
     transform: scaleX(1);
 }
 
-/* Responsive Styling */
-@media (max-width: 420px) {
-    body {
-        height: 238vh;
-        width: 100vw;
-        background: url(bg.jpeg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
 
-    .box {
-        width: 200px;
-        height: 200px;
-    }
-    .red-heart {
-
-        top: 416px;
-
-    }
-
-    nav {
-        width: 100%;
-        padding: 14px 3px;
-        font-size: 9px;
-    }
-
-    nav ul li {
-        font-size: 14px;
-        padding: 6px 9px;
-        margin: 0px 5px;
-    }
-}
 
 .gray-heart{
     background: #ccc;
@@ -233,4 +201,42 @@ position: absolute;
 }
 .red-heart.fill-color{
     background: var(--main-color);
+}
+
+
+/* Responsive Styling */
+@media (max-width: 420px) {
+    body {
+        height: 101vh;
+        width: 100vw;
+        background: url(bg.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .cen {
+        width: 23%;
+        margin: auto;
+    }
+    .box {
+        width: 200px;
+        height: 200px;
+    }
+    .red-heart {
+
+        top: 416px;
+
+    }
+
+    nav {
+        width: 100%;
+        padding: 14px 3px;
+        font-size: 9px;
+    }
+
+    nav ul li {
+        font-size: 14px;
+        padding: 6px 9px;
+        margin: 0px 5px;
+    }
 }
